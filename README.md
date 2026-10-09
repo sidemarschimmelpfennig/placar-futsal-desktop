@@ -33,19 +33,13 @@ O projeto conta ainda com integração nativa ao **VLC Media Player**, permitind
 
 > Interface rica com atalhos de teclado ágeis, configuração de períodos e monitoramento em miniatura.
 
-<!-- INSIRA AQUI A IMAGEM DO PAINEL DE CONTROLE -->
-<!-- Sugestão de caminho: assets/images/painel-controle.png -->
-
-<img src="assets/images/painel_de_controle.png" alt="Placar de Exibição" width="650">
+<img src="assets/images/painel_de_controle.png" alt="Painel de Controle" width="650">
 
 <br>
 
 ### Monitor de Exibição (Tela Cheia / Telão do Público)
 
 > Projeção de alta visibilidade e fidelidade visual para torcedores, atletas e comissão técnica.
-
-<!-- INSIRA AQUI A IMAGEM DO PLACAR DE EXIBIÇÃO -->
-<!-- Sugestão de caminho: assets/images/placar-exibicao.png -->
 
 <img src="assets/images/placar.png" alt="Placar de Exibição" width="650">
 
@@ -58,6 +52,31 @@ O projeto conta ainda com integração nativa ao **VLC Media Player**, permitind
 - **Suporte Multi-Monitor:** Detecção automática e projeção em tela cheia para saídas HDMI/VGA independentes.
 - **Mídia & Intervalos com VLC:** Suporte a exibição de vídeos promocionais e avisos em loop durante os intervalos de jogo.
 - **Compilação Otimizada:** Build standalone nativo compilado com **Nuitka** (gerando código C para performance e proteção do código-fonte) e empacotado via **Inno Setup**.
+
+---
+
+## Arquitetura & Estrutura do Projeto
+
+O projeto adota uma **Arquitetura Modular em Camadas**, com componentização visual e separação rigorosa entre camada de interface, persistência de dados e automação de build:
+
+```text
+├── assets/                  # Recursos visuais e estáticos
+│   ├── data/                # Dados locais e configurações de apoio
+│   ├── images/              # Ícones, logótipos e imagens da aplicação
+│   └── styles/              # Folhas de estilo QSS/CSS para theming desacoplado
+├── dist_installer/          # Artefactos finais gerados (Instalador .exe e arquivos comprimidos)
+├── src/                     # Código-fonte principal
+│   ├── components/          # Componentes modulares reutilizáveis de lógica visual
+│   ├── database/            # Camada de dados e persistência
+│   ├── views/               # Telas principais (Painel do Operador e Placar Público)
+│   └── widgets/             # Widgets gráficos customizados em PyQt5
+├── build_nuitka.py          # Script de automação de compilação em C nativo
+├── nuitka.ini               # Parâmetros de otimização e flags do compilador Nuitka
+├── PlacarFutsal.iss         # Script do Inno Setup para geração do instalador Windows
+├── pyproject.toml           # Gestão de dependências e metadados do projeto
+└── main.py / run.py         # Entrypoint e inicialização do ciclo de vida da aplicação
+
+```
 
 ---
 
