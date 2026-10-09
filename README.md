@@ -1,6 +1,6 @@
 <div align="center">
-  <img src="assets/images/logo.ico" alt="Ícone do Placar Futsal" width="96" height="96">
-  <h1>Placar Futsal</h1>
+  <img src="assets/images/logo.ico" alt="Ícone do Placar Futsal" width="96" height="96">  <h1>Placar Futsal</h1>
+ 
   <p><strong>Sistema de gerenciamento e exibição de placar eletrônico em tempo real com suporte a múltiplos monitores.</strong></p>
 
   <!-- Badges informativas -->
